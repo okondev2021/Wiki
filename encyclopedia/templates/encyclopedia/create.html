@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<form action="create" method="post">
+    {% csrf_token %}
+    <input type="text" name="title" id="" placeholder="Title"> 
+    <br>
+    <br>
+    <textarea style="width: 80%; height: 200px;"  name="content" id="" cols="" rows="3" placeholder="Content"></textarea>
+    <br>
+    <input type="submit" value="Save">
+</form>
+{% endblock %}

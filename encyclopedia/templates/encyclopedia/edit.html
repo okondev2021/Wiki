@@ -1,0 +1,27 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+
+
+{% for message in messages %}
+<p style="color: green">{{message}}</p>
+{% endfor %}
+
+<p>Please note that wiki uses <a href="https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax">Github Markdown</a> to learn more click on the link</p>
+
+
+
+<form action="edit" method="POST">
+    {% csrf_token %}
+    <textarea style="width: 80%; height: 200px;"  name="write" id="nn" cols="30" rows="10">{{link}}
+    </textarea>
+    <br>
+    <br>
+    <input type="submit" value="Save">
+</form>
+
+{% endblock %}

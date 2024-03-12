@@ -1,0 +1,18 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}<li>{{name}}</li>
+
+{% block body %}
+<h2>SEARCH REASULT(S)</h2>
+<ul>
+    {% for nam in name %}
+        <a href="{{nam}}"><li>{{nam}}</li></a>
+
+    {% empty %}
+        <p style="font-size: 30px">No Match Found</p>
+    {% endfor %}
+</ul>
+
+{% endblock %}
